@@ -1,4 +1,5 @@
 gapi = require("gocq_api")
+json = require("json")
 
 local seter = string.match(msg.fromMsg, "=(%d+)]")
 local find, _ = string.find(msg.fromMsg, "群名")
@@ -9,7 +10,7 @@ if getUserConf(getDiceQQ(), "群管指令权限开放", false) or getGroupConf(m
 	elseif not name then
 		return "请写出要改的群名"
 	else
-		gapi.http_post("set_group_card", msg.gid, seter, name)
+		respond = gapi.http_post("set_group_card", msg.gid, seter, name)
 		return "群名片更改成功"
 	end
 elseif msg.grpAuth >= 2 or getUserConf(msg.uid, "trust", 0) >= 4 then
@@ -18,7 +19,7 @@ elseif msg.grpAuth >= 2 or getUserConf(msg.uid, "trust", 0) >= 4 then
 	elseif not name then
 		return "请写出要改的群名"
 	else
-		gapi.http_post("set_group_card", msg.gid, seter, name)
+		respond = gapi.http_post("set_group_card", msg.gid, seter, name)
 		return "群名片更改成功"
 	end
 else
