@@ -1,4 +1,4 @@
-msg_reply.group_bulbus_oris = {
+msg_reply.group_manage_limit = {
   keyword = {
     prefix = "群管指令权限"
   },
@@ -69,7 +69,7 @@ msg_reply.group_admin_delete = {
 
 msg_reply.group_card_set = {
   keyword = {
-    prefix = "给(.*)设置群名"
+    Regex = "给(.*)设置群名"
   },
   limit = {
     grp_id = { nor = { 0 } }
@@ -93,7 +93,7 @@ msg_reply.group_name_set = {
 
 msg_reply.group_title_set = {
   keyword = {
-    prefix = "给(.*)头衔"
+    Regex = "给(.*)头衔"
   },
   limit = {
     grp_id = { nor = { 0 } }
@@ -105,7 +105,7 @@ msg_reply.group_title_set = {
 
 msg_reply.group_title_set = {
   keyword = {
-    prefix = "给(.*)头衔"
+    Regex = "给(.*)头衔"
   },
   limit = {
     grp_id = { nor = { 0 } }
