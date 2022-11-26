@@ -1,5 +1,14 @@
 msg_reply.group_bulbus_oris = {
   keyword = {
+    prefix = "群管指令权限"
+  },
+  echo = {
+    lua = "group_manage_limit"
+  }
+}
+
+msg_reply.group_bulbus_oris = {
+  keyword = {
     prefix = "禁言"
   },
   limit = {
