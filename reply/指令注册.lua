@@ -69,7 +69,7 @@ msg_reply.group_admin_delete = {
 
 msg_reply.group_card_set = {
   keyword = {
-    Regex = "给(.*)设置群名"
+    prefix = "设置群名"
   },
   limit = {
     grp_id = { nor = { 0 } }
@@ -93,7 +93,7 @@ msg_reply.group_name_set = {
 
 msg_reply.group_title_set = {
   keyword = {
-    Regex = "给(.*)头衔"
+    prefix = "设置头衔"
   },
   limit = {
     grp_id = { nor = { 0 } }
@@ -105,7 +105,7 @@ msg_reply.group_title_set = {
 
 msg_reply.group_title_set = {
   keyword = {
-    Regex = "给(.*)头衔"
+    prefix = "给(.*)头衔"
   },
   limit = {
     grp_id = { nor = { 0 } }
