@@ -5,7 +5,7 @@ json = require("json")
 local group_system_msg_list = gapi.http_post("get_group_system_msg")
 local group_add_list = json.decode(group_system_msg_list)["data"]["join_requests"] --将加群申请列表取出
 
-for i = 1, #system_msg_list do
+for i = 1, #group_add_list do
     local group_add_table = group_add_list[i] --将列表中单个加群申请事件取出
     local gid = group_add_table["group_id"]
     if getGroupConf(gid, "自动审批入群申请", false) then --如果本群打开了自动审批加群申请，则执行以下操作
