@@ -69,7 +69,7 @@ msg_reply.group_admin_delete = {
 
 msg_reply.group_card_set = {
   keyword = {
-    prefix = "设置群名"
+    prefix = "设置群名片"
   },
   limit = {
     grp_id = { nor = { 0 } }
@@ -91,7 +91,7 @@ msg_reply.group_name_set = {
   }
 }
 
-msg_reply.group_title_set = {
+msg_reply.group_bulbus_oris_not = {
   keyword = {
     prefix = "设置头衔"
   },
@@ -99,18 +99,54 @@ msg_reply.group_title_set = {
     grp_id = { nor = { 0 } }
   },
   echo = {
-    lua = "group_title_set"
+    lua = "group_bulbus_oris_not"
   }
 }
 
-msg_reply.group_title_set = {
+msg_reply.group_set_essence = {
   keyword = {
-    prefix = "给(.*)头衔"
+    regex = "CQ:reply(.*)设为精华"
   },
   limit = {
     grp_id = { nor = { 0 } }
   },
   echo = {
-    lua = "group_title_set"
+    lua = "group_set_essence"
+  }
+}
+
+msg_reply.group_set_notice = {
+  keyword = {
+    prefix = "发送公告"
+  },
+  limit = {
+    grp_id = { nor = { 0 } }
+  },
+  echo = {
+    lua = "group_set_notice"
+  }
+}
+
+msg_reply.group_add_request_switch = {
+  keyword = {
+    prefix = "自动审批入群申请"
+  },
+  limit = {
+    grp_id = { nor = { 0 } }
+  },
+  echo = {
+    lua = "group_add_request_switch"
+  }
+}
+
+msg_reply.group_add_request_answer = {
+  keyword = {
+    prefix = "设置加群答案"
+  },
+  limit = {
+    grp_id = { nor = { 0 } }
+  },
+  echo = {
+    lua = "group_add_request_answer"
   }
 }
