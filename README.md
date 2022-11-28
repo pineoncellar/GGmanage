@@ -1,11 +1,11 @@
 # group_manage
 
----
-
 ## infomation
 
 集成一些群管指令的 mod，所有功能基于 gocq_api 库。
+
 ~~其实绝大多数的功能都是 dice 本身就自带有指令的，也方便不了多少~~
+
 dice 论坛链接：
 
 ```json
