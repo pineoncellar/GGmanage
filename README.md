@@ -1,4 +1,5 @@
 # gocq_group_manage
+> 基于gocq_api库的群管指令模块
 
 ## infomation
 
