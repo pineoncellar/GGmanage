@@ -1,7 +1,6 @@
 # gocq_group_manage
 > 基于gocq_api库的群管指令模块
 
-
 ## infomation
 
 集成一些群管指令的 mod，所有功能基于 gocq_api 库。
