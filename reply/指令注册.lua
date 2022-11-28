@@ -21,7 +21,7 @@ msg_reply.group_bulbus_oris = {
 
 msg_reply.group_kick = {
   keyword = {
-    prefix = "踢走"
+    prefix = "踢出"
   },
   limit = {
     grp_id = { nor = { 0 } }
@@ -91,7 +91,7 @@ msg_reply.group_name_set = {
   }
 }
 
-msg_reply.group_bulbus_oris_not = {
+msg_reply.group_title_set = {
   keyword = {
     prefix = "设置头衔"
   },
@@ -99,13 +99,13 @@ msg_reply.group_bulbus_oris_not = {
     grp_id = { nor = { 0 } }
   },
   echo = {
-    lua = "group_bulbus_oris_not"
+    lua = "group_title_set"
   }
 }
 
 msg_reply.group_set_essence = {
   keyword = {
-    regex = "CQ:reply(.*)设为精华"
+    prefix = "[CQ:reply"
   },
   limit = {
     grp_id = { nor = { 0 } }
@@ -115,7 +115,7 @@ msg_reply.group_set_essence = {
   }
 }
 
-msg_reply.group_set_notice = {
+--[[msg_reply.group_set_notice = {
   keyword = {
     prefix = "发送公告"
   },
@@ -126,6 +126,7 @@ msg_reply.group_set_notice = {
     lua = "group_set_notice"
   }
 }
+]]
 
 msg_reply.group_add_request_switch = {
   keyword = {
@@ -141,12 +142,36 @@ msg_reply.group_add_request_switch = {
 
 msg_reply.group_add_request_answer = {
   keyword = {
-    prefix = "设置加群答案"
+    prefix = "设置入群答案"
   },
   limit = {
     grp_id = { nor = { 0 } }
   },
   echo = {
     lua = "group_add_request_answer"
+  }
+}
+
+msg_reply.group_add_request_start = {
+  keyword = {
+    prefix = "开始审批入群申请"
+  },
+  limit = {
+    user_var = { trust = { at_least = 4 } }
+  },
+  echo = {
+    lua = "group_add_request"
+  }
+}
+
+msg_reply.group_bulbus_oris_not = {
+  keyword = {
+    prefix = "解除禁言"
+  },
+  limit = {
+    grp_id = { nor = { 0 } }
+  },
+  echo = {
+    lua = "group_bulbus_oris_not"
   }
 }
