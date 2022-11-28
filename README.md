@@ -1,4 +1,4 @@
-# group_manage
+# gocq_group_manage
 
 ## infomation
 
