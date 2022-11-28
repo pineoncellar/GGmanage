@@ -6,9 +6,9 @@ if getUserConf(getDiceQQ(), "群管指令权限开放", false) or getGroupConf(m
     if not name then
         return "请写出新群名"
     else
-        respond = gapi.http_post("set_group_name", msg.gid, name)
+        stat, respond = gapi.http_post("set_group_name", msg.gid, name)
         responds = json.decode(respond)
-        if responds["status"] == "ok" then
+        if stat then
             return "成功将群名设置为：" .. name
         else
             return responds["wording"]
@@ -20,14 +20,14 @@ elseif msg.grpAuth >= 2 or getUserConf(msg.uid, "trust", 0) >= 4 then
     if not name then
         return "请写出新群名"
     else
-        respond = gapi.http_post("set_group_name", msg.gid, name)
+        stat, respond = gapi.http_post("set_group_name", msg.gid, name)
         responds = json.decode(respond)
-        if responds["status"] == "ok" then
+        if stat then
             return "成功将群名设置为：" .. name
         else
             return responds["wording"]
         end
     end
 else
-    return "你没有权限哦"
+    return "{没有权限}"
 end
