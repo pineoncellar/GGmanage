@@ -5,6 +5,21 @@ json = require("json")
 local stat, group_system_msg_list = gapi.http_post("get_group_system_msg")
 local group_add_list = json.decode(group_system_msg_list)["data"]["join_requests"] --将加群申请列表取出
 
+function string.split(str) --将str中的一个个答案以|分割，存入表中并将表返回
+    local str_tab = {}
+    while (true) do
+        local find, _ = string.find(str, "|")
+        if not (find) then
+            table.insert(str_tab, str)
+            break
+        end
+        local sub_str = string.sub(str, 1, find - 1)
+        table.insert(str_tab, sub_str)
+        str = string.sub(str, find + 1, #str)
+    end
+    return str_tab
+end
+
 for i = 1, #group_add_list do
     local group_add_table = group_add_list[i] --将列表中单个加群申请事件取出
     local gid = group_add_table["group_id"]
