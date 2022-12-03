@@ -1,7 +1,7 @@
 gapi = require("gocq_api")
 json = require("json")
 
-if string.match(msg.fromMsg, "设为精华") then
+if string.match(msg.fromMsg, "设置精华") then
 
     if string.match(msg.fromMsg, "-") then
         msg_id = string.match(msg.fromMsg, "-%d+")
