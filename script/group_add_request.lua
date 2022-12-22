@@ -19,7 +19,7 @@ function string.split(str) --将str中的一个个答案以|分割，存入表�
     end
     return str_tab
 end
-
+if group_add_list ~= nil then
 for i = 1, #group_add_list do
     local group_add_table = group_add_list[i] --将列表中单个加群申请事件取出
     local gid = group_add_table["group_id"]
@@ -43,4 +43,5 @@ for i = 1, #group_add_list do
             end
         end
     end
+end
 end
